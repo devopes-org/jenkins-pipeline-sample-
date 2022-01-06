@@ -1,18 +1,13 @@
 pipeline {
     agent any
     stages {
-        stage {'Build'}
+        stage { 'Build' }
         agent {
-        docker {
-            image 'scratch'
-            reuseNode true
+            docker {
+                image 'scratch'
+                reuseNode true
+            }
         }
-        }
-        
-       }
-
-        
-        
-        
     }
 }
+
