@@ -8,6 +8,9 @@ pipeline {
                     reuseNode true
                 }
             }
+            steps {
+                sh 'echo work done'
+            }
         }
     }
 }
