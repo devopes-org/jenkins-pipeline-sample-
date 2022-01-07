@@ -1,12 +1,12 @@
 pipeline {
     agent {
-        docker { image 'node:16.13.1-alpine'}
+        docker { docker.image('httpd').withRun('-p 8080:80') }
         
     }
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                sh 'hi'
             }
         }
     }
