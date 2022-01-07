@@ -1,20 +1,10 @@
-pipeline {
-  agent { 
-    //dockerfile true
-    docker {
-      image 'httpd:latest'
-      label 'my-httpd-test'
-      args '-d -p 8085:80'
-    }
-  }
-  
-    stages {
-        stage('Test') {
-            steps {
-                //withRun('-p 8080:80')
-                sh 'echo dockerfile' 
-                
-            }
-        }
-    }
-}
+pipeline
+{
+    agent any
+          stages{
+               stage(Docker image build)
+                     steps{
+                         sh 'docker run -itd -p 9000:80 --name myapache1 httpd'
+
+                     }
+          }
