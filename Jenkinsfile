@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { docker.image('httpd').withRun('-p 8080:80') }
+        docker { image ('httpd').withRun('-p 8080:80') }
         
     }
     stages {
