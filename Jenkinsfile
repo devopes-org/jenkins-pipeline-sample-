@@ -1,16 +1,20 @@
 pipeline {
-     agent {
-          docker.image('alpine').withRun('-p 4030:81'){
-          sh 'echo deploying.....'
-          }
-}
-stages {
-     stage('Run Docker container on Jenkins agent'){
-        steps {
-                 sh 'echo deployed....'
-                /*sh 'docker run -d -v /var/run/docker.sock:/var/run/docker.sock --privileged  -p  4030:81  --name myalpine alpine'*/
-}
-}
-}
-
+  agent { 
+    //dockerfile true
+    docker {
+      image 'httpd:latest'
+      label 'my-httpd-test'
+      args '-d -p 8085:80'
+    }
+  }
+  
+    stages {
+        stage('Test') {
+            steps {
+                //withRun('-p 8080:80')
+                sh 'echo dockerfile' 
+                
+            }
+        }
+    }
 }
