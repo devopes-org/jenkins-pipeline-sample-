@@ -1,6 +1,6 @@
 pipeline {
   agent { 
-    dockerfile true
+    //dockerfile true
     docker{
       steps{
         sh 'echo inside agent...........'
