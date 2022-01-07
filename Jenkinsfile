@@ -1,23 +1,16 @@
-#!groovy
-
 pipeline {
-  agent none
-  stages {
-    stage('Maven Install') {
-      agent {
-        docker {
-          image 'maven:3.5.0'
-        }
-      }
-      steps {
-        sh 'mvn clean install'
-      }
-    }
-    stage('Docker Build') {
-      agent any
-      steps {
-        sh 'docker build -t shanem/spring-petclinic:latest .'
-      }
-    }
-  }
+     agent {
+          docker.image('alpine').withRun('-p 4030:81'){
+          sh 'echo deploying.....'
+          }
+}
+stages {
+     stage('Run Docker container on Jenkins agent'){
+        steps {
+                 sh 'echo deployed....'
+                /*sh 'docker run -d -v /var/run/docker.sock:/var/run/docker.sock --privileged  -p  4030:81  --name myalpine alpine'*/
+}
+}
+}
+
 }
