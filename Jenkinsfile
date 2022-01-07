@@ -1,12 +1,13 @@
 pipeline {
     agent {
-        docker { image ('httpd').withRun('-p 8080:80') }
+        docker { image 'httpd' }
         
     }
     stages {
         stage('Test') {
             steps {
-                sh 'hi'
+                withRun('-p 8080:80')
+                
             }
         }
     }
