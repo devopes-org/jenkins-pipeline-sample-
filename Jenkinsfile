@@ -1,6 +1,9 @@
 pipeline {
      agent {
-          docker { image 'alpine' }
+          docker { 
+               image 'alpine'
+               reuseNode true
+          }
 }
 stages {
      stage('Run Docker container on Jenkins agent'){
