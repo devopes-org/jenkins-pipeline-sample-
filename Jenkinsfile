@@ -5,7 +5,7 @@ pipeline {
 stages {
      stage('Run Docker container on Jenkins agent'){
         steps {
-                sh 'docker run -itd --name myalpine alpine:latest /bin/bash'
+                sh 'docker run -itd --name myalpine alpine:latest'
 }
 }
 }
