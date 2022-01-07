@@ -2,9 +2,7 @@ pipeline {
   agent { 
     //dockerfile true
     docker{
-      steps{
-        sh 'echo inside agent...........'
-      }
+      sh 'echo inside agent...........'
     }
   }
   
