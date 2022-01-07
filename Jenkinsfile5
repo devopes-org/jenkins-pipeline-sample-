@@ -1,0 +1,12 @@
+pipeline
+{
+    agent any
+          stages{
+               stage(Docker image build)
+                     steps{
+                         sh 'docker build -t alpine:latest .'
+                         sh 'docker run -itd '
+
+                     }
+    }
+}
