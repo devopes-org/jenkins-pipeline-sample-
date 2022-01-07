@@ -1,9 +1,6 @@
-pipeline {
-    agent { dockerfile true }
-    stages {
-        stage(Test)
-        steps {
-            sh 'docker ps -a'
-        }
-    }
-}
+FROM nginx
+RUN echo 'cicd pipeline'
+WORKDIR  /var/www/html
+COPY index.html .
+EXPOSE 80
+CMD [systemctl restart nginx ]
