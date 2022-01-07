@@ -2,7 +2,9 @@ pipeline {
   agent { 
     //dockerfile true
     docker{
-      sh 'echo inside agent...........'
+      image: 'httpd:latest'
+      label: 'my-httpd-test'
+      args: '-d -p 8085:80'
     }
   }
   
