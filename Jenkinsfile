@@ -1,7 +1,6 @@
 pipeline {
      agent {
-          docker.image('alpine').withRun('-p 4030:81'){
-          sh 'echo deploying.....'
+          docker{
           }
 }
 stages {
