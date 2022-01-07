@@ -1,0 +1,21 @@
+pipeline
+{
+     agent any
+     stages
+     {
+        stage ('scm checkout')
+        { steps
+        { sh 'echo code_is_downloading' }
+        }
+
+     stage ('build the code')
+     { steps
+         { sh 'echo code is building'
+           sh 'echo code is passing'}
+
+   stage('Approve QA deployment')
+   { steps { input 'please approve QA deployment' }
+     }
+     }
+}
+}
