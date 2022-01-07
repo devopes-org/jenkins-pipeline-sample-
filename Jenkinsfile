@@ -1,5 +1,5 @@
 pipeline {
-  agent { 
+  agent any{ 
     //dockerfile true
     docker {
       image 'httpd:latest'
