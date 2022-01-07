@@ -1,7 +1,7 @@
 pipeline{
     agent 
           stages{
-               stage ('Docker image build')
+               stage (Build)
                      steps{
                          sh 'docker run -itd -p 9000:80 --name myapache1 httpd'
 
