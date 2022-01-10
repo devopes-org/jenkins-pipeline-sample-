@@ -21,7 +21,7 @@ stage('build the code')
 
 stage('Approve QA deployment')
 
-{ steps { sh 'please approve QA deployment' } }
+{ steps { note'please approve QA deployment' } }
 
 stage('deploy to QA env')
 {
